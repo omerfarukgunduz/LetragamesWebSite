@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Paneli</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- İcons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/Admin/Index/" class="brand-link">
+                <img src="https://i.hizliresim.com/n9bcqmv.png"
+                     alt=" Logo"
+                     class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
+                <span class="brand-text font-weight-light">ADMİN PANELİ</span>
+            </a>
+            <!-- Sidebar -->
+            <div class="sidebar">
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                             with font-awesome or any other icon font library -->
+
+                        <li class="nav-item">
+
+                            <a href="/Hakkimizda/Index/" class="nav-link">
+                                <i class="bi bi-info-circle-fill"></i>
+                                <p>
+                                    &nbsp; Hakkımızda
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Oyunlarimiz/Index/" class="nav-link">
+                                <i class="bi bi-joystick"></i>
+                                <p>
+                                    &nbsp; Oyunlarımız
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Ekibimiz/Index/" class="nav-link">
+                                <i class="bi bi-people-fill"></i>
+                                <p>
+                                    &nbsp;  Ekibimiz
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Iletisim/Index/" class="nav-link">
+                                <i class="bi bi-chat-right-text-fill"></i>
+                                <p>
+                                    &nbsp;  İletişim
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Login/Index/" class="nav-link">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <p>
+                                    &nbsp;  Çıkış
+                                </p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+
+                    @RenderBody()
+
+                </div>
+
+            </section>
+            <!-- /.content -->
+        </div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/AdminLTE-3.0.4/dist/js/demo.js"></script>
+</body>
+</html>
