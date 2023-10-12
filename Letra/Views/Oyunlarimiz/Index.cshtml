@@ -8,32 +8,34 @@
 
 <h2>Oyunlarımız Sayfası</h2>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Oyun Adı</th>
-            <th scope="col">Oyun AÇıklaması</th>
-            <th scope="col">Oyun Fotoğrafı Linki</th>
-            <th scope="col">Oyun Linki</th>
-            <th scope="col">Güncelle</th>
-            <th scope="col">Sil</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var x in Model)
-        {
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <th scope="row">@x.Id</th>
-                <td>@x.OyunAdi</td>
-                <td>@x.OyunAciklamasi</td>
-                <td>@x.OyunFotografi</td>
-                <td>@x.OyunLinki</td>
-                <td><a href="#" class="btn btn-warning">Güncelle</a></td>
-                <td><a href="#" class="btn btn-danger">Sil</a></td>
+                <th scope="col">ID</th>
+                <th scope="col">Oyun Adı</th>
+                <th scope="col">Oyun AÇıklaması</th>
+                <th scope="col">Oyun Fotoğrafı Linki</th>
+                <th scope="col">Oyun Linki</th>
+                <th scope="col">Güncelle</th>
+                <th scope="col">Sil</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
 
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <th scope="row">@x.Id</th>
+                    <td>@x.OyunAdi</td>
+                    <td>@x.OyunAciklamasi</td>
+                    <td>@x.OyunFotografi</td>
+                    <td>@x.OyunLinki</td>
+                    <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+                    <td><a href="#" class="btn btn-danger">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

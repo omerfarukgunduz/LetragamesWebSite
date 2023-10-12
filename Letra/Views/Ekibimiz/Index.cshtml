@@ -4,41 +4,45 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<div class="container">
+    <h2>Ekibimiz Sayfası</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Üye Ad Soyad</th>
+                        <th width="200px">Üye Pozisyon</th>
+                        <th width="200px">Üye Fotoğrafı Linki</th>
+                        <th>Üye Linkedin</th>
+                        <th>Üye Github</th>
+                        <th>Üye Mail</th>
+                        <th>Güncelle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-<h2>Ekibimiz Sayfası</h2>
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <th scope="row">@x.Id</th>
+                            <td>@x.UyeAdSoyad</td>
+                            <td>@x.UyePozisyon</td>
+                            <td>@x.UyeFotograf</td>
+                            <td>@x.UyeLinkedin</td>
+                            <td>@x.UyeGithub</td>
+                            <td>@x.UyeMail</td>
+                            <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+                            <td><a href="#" class="btn btn-danger">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Üye Ad Soyad</th>
-            <th scope="col">Üye Pozisyon</th>
-            <th scope="col">Üye Fotoğrafı Linki</th>
-            <th scope="col">Üye Linkedin</th>
-            <th scope="col">Üye Github</th>
-            <th scope="col">Üye Mail</th>
-            <th scope="col">Güncelle</th>
-            <th scope="col">Sil</th>
-        </tr>
-    </thead>
-    <tbody>
+    </div>
+    </div>
 
-        @foreach (var x in Model)
-        {
-            <tr>
-                <th scope="row">@x.Id</th>
-                <td>@x.UyeAdSoyad</td>
-                <td>@x.UyePozisyon</td>
-                <td>@x.UyeFotograf</td>
-                <td>@x.UyeLinkedin</td>
-                <td>@x.UyeGithub</td>
-                <td>@x.UyeMail</td>
-                <td><a href="#" class="btn btn-warning">Güncelle</a></td>
-                <td><a href="#" class="btn btn-danger">Sil</a></td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-<a class="btn btn-primary">Yeni Üye Ekle</a>
-<h3> üye ekle sayfası yapılacak üye güncelle yapılacak butonların backendi yazılacak</h3>
+    <a class="btn btn-primary">Yeni Üye Ekle</a>
+    <h3> üye ekle sayfası yapılacak üye güncelle yapılacak butonların backendi yazılacak</h3>
+<h3>sayfaya sığacak şekilde yap</h3>
