@@ -13,5 +13,7 @@ namespace Letra.Models
         public string AdSoyad { get; set; }
         public string MailAdresi { get; set; }
         public string Mesaj { get; set; }
+
+        public DateTime Tarih { get; set; } = DateTime.Now;
     }
 }

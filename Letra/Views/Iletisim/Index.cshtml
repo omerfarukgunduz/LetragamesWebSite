@@ -24,14 +24,12 @@
                                     {
                                         <!-- timeline time label -->
                                         <div class="time-label">
-                                            <span class="bg-info">
-                                                @*@(((DateTime)item. Tarih).ToString("dd-MMM-yyyy"))*@
-                                            </span>
+                                            <span class="bg-info">@item.Tarih </span>
                                         </div>
                                         <div>
                                             <i class="fas fa-comments bg-warning"></i>
-                                            <div class="timeline-item">
-                                                <span class="time"><i class="far fa-clock"></i> @item.MailAdresi</span>
+                                            <div class="timeline-item"> 
+                                                <span class="time"><i class="bi bi-envelope-at"></i> @item.MailAdresi</span>
                                                 <h3 class="timeline-header"><a href="#">@item.AdSoyad</a> </h3>
                                                 <div class="timeline-body" style="display:flex">
                                                     <div> @item.Mesaj </div>

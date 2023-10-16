@@ -1,0 +1,26 @@
+﻿@model  Letra.Models.Admin
+
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Güncelle</h2>
+
+@using (Html.BeginForm("AdminGuncelle", "Admin", FormMethod.Post))
+{
+    <b>Kullanıcı Id</b>
+    <br />
+    @Html.TextBoxFor(a => a.Id, new { @class = "form-control" })
+    <br />
+    <b>Kullanıcı Adı</b>
+    <br />
+    @Html.TextBoxFor(a => a.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    <b>Şifre</b>
+    @Html.TextBoxFor(a => a.Sifre, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+}
+

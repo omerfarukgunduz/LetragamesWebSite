@@ -1,8 +1,30 @@
-﻿
+﻿@using Letra.Models
+@model List<Admin>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Admin</h2>
+<h2>Admin İşlemleri</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>Kullanıcı Adı</td>
+        <td>Şifre</td>
+        <td>Güncelle</td>
+        <td>Sil</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.KullaniciAdi</td>
+            <td>@item.Sifre</td>
+            <td><a href="/Admin/AdminGetir/@item.Id" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Admin/AdminSil/@item.Id" class="btn btn-danger sil" data-id="@item.Id">Sil</a></td>
+        </tr>
+    }
+</table>
+<a link href="/Admin/YeniAdminEkle" class="btn btn-primary">Yeni Admin Ekle</a>
 

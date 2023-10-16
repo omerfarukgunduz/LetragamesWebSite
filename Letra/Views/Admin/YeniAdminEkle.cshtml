@@ -1,0 +1,22 @@
+﻿@model  Letra.Models.Admin
+@{
+    ViewBag.Title = "YeniAdminEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Admin Ekle</h2>
+
+<form class="form-group" method="post">
+    
+    <b>Kullanıcı Adı</b>
+    <br />
+    @Html.TextBoxFor(a => a.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    <b>Şifre</b>
+    @Html.TextBoxFor(a => a.Sifre, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
+

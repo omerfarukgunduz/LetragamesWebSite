@@ -250,6 +250,10 @@
     <Compile Include="Migrations\20231012115540_RenameLogoToLogoLinkInHakkimizdaTable.designer.cs">
       <DependentUpon>20231012115540_RenameLogoToLogoLinkInHakkimizdaTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231015170404_Iletisim-Tarih.cs" />
+    <Compile Include="Migrations\20231015170404_Iletisim-Tarih.designer.cs">
+      <DependentUpon>20231015170404_Iletisim-Tarih.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Context.cs" />
@@ -2528,6 +2532,8 @@
     <Content Include="Views\Ekibimiz\Index.cshtml" />
     <Content Include="Views\Oyunlarimiz\Index.cshtml" />
     <Content Include="Views\Iletisim\Index.cshtml" />
+    <Content Include="Views\Admin\YeniAdminEkle.cshtml" />
+    <Content Include="Views\Admin\AdminGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

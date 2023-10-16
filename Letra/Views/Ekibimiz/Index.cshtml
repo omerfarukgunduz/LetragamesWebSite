@@ -4,45 +4,56 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 <div class="container">
-    <h2>Ekibimiz Sayfası</h2>
     <div class="table-responsive">
-        <table class="table table-bordered">
-                <thead>
+        <table class="table table-bordered" style="width: auto;">
+            <tbody>
+                @foreach (var x in Model)
+                {
                     <tr>
-                        <th>ID</th>
-                        <th>Üye Ad Soyad</th>
-                        <th width="200px">Üye Pozisyon</th>
-                        <th width="200px">Üye Fotoğrafı Linki</th>
-                        <th>Üye Linkedin</th>
-                        <th>Üye Github</th>
-                        <th>Üye Mail</th>
-                        <th>Güncelle</th>
-                        <th>Sil</th>
+                        <th scope="row">ID:</th>
+                        <td>@x.Id</td>
                     </tr>
-                </thead>
-                <tbody>
-
-                    @foreach (var x in Model)
-                    {
-                        <tr>
-                            <th scope="row">@x.Id</th>
-                            <td>@x.UyeAdSoyad</td>
-                            <td>@x.UyePozisyon</td>
-                            <td>@x.UyeFotograf</td>
-                            <td>@x.UyeLinkedin</td>
-                            <td>@x.UyeGithub</td>
-                            <td>@x.UyeMail</td>
-                            <td><a href="#" class="btn btn-warning">Güncelle</a></td>
-                            <td><a href="#" class="btn btn-danger">Sil</a></td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-
+                    <tr>
+                        <th scope="row">Üye Ad Soyad:</th>
+                        <td>@x.UyeAdSoyad</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Üye Pozisyon:</th>
+                        <td>@x.UyePozisyon</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Üye Fotoğrafı Linki:</th>
+                        <td>@x.UyeFotograf</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Üye Linkedin:</th>
+                        <td>@x.UyeLinkedin</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Üye Github:</th>
+                        <td>@x.UyeGithub</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Üye Mail:</th>
+                        <td>@x.UyeMail</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Güncelle:</th>
+                        <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+                    </tr>
+                    <tr style="border-bottom: 4px solid #ff0000;">
+                        <th scope="row">Sil:</th>
+                        <td><a href="#" class="btn btn-danger">Sil</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-    </div>
+</div>
 
-    <a class="btn btn-primary">Yeni Üye Ekle</a>
-    <h3> üye ekle sayfası yapılacak üye güncelle yapılacak butonların backendi yazılacak</h3>
+
+<a class="btn btn-primary">Yeni Üye Ekle</a>
+<h3> üye ekle sayfası yapılacak üye güncelle yapılacak butonların backendi yazılacak</h3>
 <h3>sayfaya sığacak şekilde yap</h3>
