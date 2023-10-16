@@ -15,7 +15,6 @@
             <th scope="col">Açıklama</th>
             <th scope="col">LogoLink</th>
             <th scope="col">Güncelle</th>
-            <th scope="col">Sil</th>
         </tr>
     </thead>
     <tbody>
@@ -26,12 +25,10 @@
             <th scope="row">@x.Id</th>
             <td>@x.Aciklama</td>
             <td>@x.LogoLink</td>
-            <td><a href="#" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Hakkimizda/HakkimizdaGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
         </tr>
         }
     </tbody>
 </table>
-<h3 style="color:red"> güncelle sayfası oluşturulacak ve sil ile güncellenin backendi yazılıcak</h3>
 
 

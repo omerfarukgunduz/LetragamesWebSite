@@ -1,0 +1,29 @@
+﻿@model  Letra.Models.Hakkimizda
+
+@{
+    ViewBag.Title = "HakkimizdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımızda Güncelle</h2>
+
+@using (Html.BeginForm("HakkimizdaGuncelle", "Hakkimizda", FormMethod.Post))
+
+{
+    <b> Id</b>
+    <br />
+    @Html.TextBoxFor(a => a.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <b>Açıklama</b>
+    <br />
+    @Html.TextBoxFor(a => a.Aciklama, new { @class = "form-control" })
+    <br />
+    <b>Logo Link</b>
+    <br />
+    @Html.TextBoxFor(a => a.LogoLink, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+
+
+}
