@@ -1,0 +1,42 @@
+﻿@model  Letra.Models.Ekibimiz
+
+@{
+    ViewBag.Title = "UyeGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Üye Güncelle</h2>
+
+
+@using (Html.BeginForm("UyeGuncelle", "Ekibimiz", FormMethod.Post))
+{
+    <b> ID</b>
+    <br />
+    @Html.TextBoxFor(e => e.Id, new { @class = "form-control" })
+    <br />
+    <b>Üye Ad Soyad</b>
+    <br />
+    @Html.TextBoxFor(e => e.UyeAdSoyad, new { @class = "form-control" })
+    <br />
+    <b>Üye Pozisyon</b>
+    <br />
+    @Html.TextBoxFor(e => e.UyePozisyon, new { @class = "form-control" })
+    <br />
+    <b>Üye Fotoğrafı Linki</b>
+    @Html.TextBoxFor(a => a.UyeFotograf, new { @class = "form-control" })
+    <br />
+    <b>Üye Linkedin</b>
+    @Html.TextBoxFor(a => a.UyeLinkedin, new { @class = "form-control" })
+    <br />
+    <b>Üye Github </b>
+    @Html.TextBoxFor(a => a.UyeGithub, new { @class = "form-control" })
+    <br />
+    <b>Üye Mail </b>
+    @Html.TextBoxFor(a => a.UyeMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+    <h4>kaydedildi diye uyarı çıksın</h4>
+}
+
+

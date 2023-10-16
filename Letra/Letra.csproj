@@ -2534,6 +2534,8 @@
     <Content Include="Views\Iletisim\Index.cshtml" />
     <Content Include="Views\Admin\YeniAdminEkle.cshtml" />
     <Content Include="Views\Admin\AdminGetir.cshtml" />
+    <Content Include="Views\Ekibimiz\YeniUyeEkle.cshtml" />
+    <Content Include="Views\Ekibimiz\UyeGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
