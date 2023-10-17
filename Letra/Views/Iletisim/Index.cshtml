@@ -28,13 +28,13 @@
                                         </div>
                                         <div>
                                             <i class="fas fa-comments bg-warning"></i>
-                                            <div class="timeline-item"> 
+                                            <div class="timeline-item">
                                                 <span class="time"><i class="bi bi-envelope-at"></i> @item.MailAdresi</span>
                                                 <h3 class="timeline-header"><a href="#">@item.AdSoyad</a> </h3>
                                                 <div class="timeline-body" style="display:flex">
                                                     <div> @item.Mesaj </div>
                                                     <div style="margin-left:auto;">
-                                                        <a data-id="@item.Id" href="/Iletisim/MesajSil/@item.Id" class="btn btn-danger sil">Sil</a>
+                                                        <a data-id="@item.Id" href="/Iletisim/MesajSil/@item.Id" class="btn btn-danger sil" >Sil</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -55,3 +55,64 @@
 
 </body>
 </html>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+        // Tüm "silButton" sınıfına sahip öğeleri seç
+        var deleteButtons = document.querySelectorAll(".sil");
+
+        // Her bir buton için olay dinleyici ekle
+        deleteButtons.forEach(function (button) {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                var adminid = button.getAttribute("data-id");
+
+                Swal.fire({
+                    title: 'Emin misiniz?',
+                    text: "Silmek istediğinizden emin misiniz?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Evet, sil!',
+                    cancelButtonText: 'İptal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        performDelete(adminid);
+                    }
+                });
+            });
+        });
+
+        function performDelete(adminid) {
+            $.ajax({
+                url: '/Iletisim/MesajSil', // Controller işleminin URL'sini doğru şekilde belirtin  buraaya dikkat
+                method: 'POST', // Veya GET, PUT, DELETE
+                data: { id: adminid }, // İsteğe gönderilecek veriler
+                success: function (data) {
+                    Swal.fire({
+                        icon: 'success', // İkon tipi
+                        title: 'Silindi!', // Başlık
+                        text: 'İşlem başarıyla tamamlandı.', // Metin içeriği
+                        showConfirmButton: false, // Onay butonunu gizle
+                        timer: 1500 // Otomatik kapatılma süresi (isteğe bağlı)
+                    });
+
+                    // Belirli bir süre sonra sayfanın yeniden yüklenmesini sağla
+                    setTimeout(function () {
+                        // Takvim controllerını tetiklemek için ayrı bir AJAX isteği gönder
+                        // Burada triggerCalendarAction() veya gerekli işlemi çağırabilirsiniz
+                        location.reload(); // Sayfayı yeniden yükle
+                    }, 1500);
+                },
+                error: function () {
+                    Swal.fire(
+                        'Hata!',
+                        'İşlem sırasında bir hata oluştu.',
+                        'error'
+                    );
+                }
+            });
+        }
+</script>
