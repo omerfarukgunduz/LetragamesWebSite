@@ -1,0 +1,34 @@
+﻿@model  Letra.Models.Oyunlarimiz
+
+@{
+    ViewBag.Title = "OyunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Oyun Güncelle</h2>
+
+
+@using (Html.BeginForm("OyunGuncelle", "Oyunlarimiz", FormMethod.Post))
+{
+    <b>ID</b>
+    <br />
+    @Html.TextBoxFor(o => o.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <b>Oyun Adı</b>
+    <br />
+    @Html.TextBoxFor(o => o.OyunAdi, new { @class = "form-control" })
+    <br />
+    <b>Oyun Açıklaması</b>
+    <br />
+    @Html.TextBoxFor(o => o.OyunAciklamasi, new { @class = "form-control" })
+    <br />
+    <b>Oyun Fotoğrafı Linki</b>
+    @Html.TextBoxFor(o => o.OyunFotografi, new { @class = "form-control" })
+    <br />
+    <b>Oyun Linki</b>
+    @Html.TextBoxFor(o => o.OyunLinki, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+
+}

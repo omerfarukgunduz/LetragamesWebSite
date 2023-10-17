@@ -2537,6 +2537,8 @@
     <Content Include="Views\Ekibimiz\YeniUyeEkle.cshtml" />
     <Content Include="Views\Ekibimiz\UyeGetir.cshtml" />
     <Content Include="Views\Hakkimizda\HakkimizdaGetir.cshtml" />
+    <Content Include="Views\Oyunlarimiz\YeniOyunEkle.cshtml" />
+    <Content Include="Views\Oyunlarimiz\OyunGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

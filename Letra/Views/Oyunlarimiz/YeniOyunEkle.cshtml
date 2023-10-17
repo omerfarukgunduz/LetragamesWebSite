@@ -1,0 +1,28 @@
+﻿@model  Letra.Models.Oyunlarimiz
+
+@{
+    ViewBag.Title = "YeniOyunEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Oyun Ekle</h2>
+
+<form class="form-group" method="post">
+
+    <b>Oyun Adı</b>
+    <br />
+    @Html.TextBoxFor(o => o.OyunAdi, new { @class = "form-control" })
+    <br />
+    <b>Oyun Açıklaması </b>
+    @Html.TextBoxFor(o => o.OyunAciklamasi, new { @class = "form-control" })
+    <br />
+    <b>Oyun Fotoğrafı </b>
+    @Html.TextBoxFor(o => o.OyunFotografi, new { @class = "form-control" })
+    <br />
+    <b>Oyun Linki </b>
+    @Html.TextBoxFor(o => o.OyunLinki, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

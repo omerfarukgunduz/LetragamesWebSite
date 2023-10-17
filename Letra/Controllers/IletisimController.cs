@@ -17,5 +17,13 @@ namespace Letra.Controllers
             var veriler = c.İletisim.ToList();
             return View(veriler);
         }
+
+        public ActionResult MesajSil(int id)
+        {
+            var msj = c.İletisim.Find(id);
+            c.İletisim.Remove(msj);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
