@@ -19,6 +19,7 @@ namespace Letra.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Index(Admin a)
         {
@@ -34,5 +35,13 @@ namespace Letra.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
+
+        public ActionResult LogOut()
+        {
+         FormsAuthentication.SignOut(); 
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
+        }
     }
+    
 }
