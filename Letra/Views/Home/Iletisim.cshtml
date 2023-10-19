@@ -1,0 +1,44 @@
+﻿<div class="resume-section-content">
+    <form id="contact-form" method="post">
+        <h1>İLETİŞİM</h1>
+        <label> Ad Soyad</label>
+        <input type="text" class="form-control" name="Adsoyad" placeholder="Adınız ve soyadınız" required />
+        <label> Mail</label>
+        <input type="email" class="form-control" name="MailAdresi" placeholder="E-posta adresiniz" required />
+        <label> Mesaj</label>
+        <input type="text" class="form-control" name="Mesaj" placeholder="Mesajınız" required />
+        <br />
+        <button class="btn btn-info">Mesaj Gönder</button>
+    </form>
+</div>
+
+<script>
+     document.getElementById('contact-form').addEventListener('submit', function (event) {
+         var form = event.target;
+         var inputs = form.querySelectorAll('input');
+         var isValid = true;
+
+         for (var i = 0; i < inputs.length; i++) {
+             if (!inputs[i].value) {
+                 isValid = false;
+                 inputs[i].classList.add('error');
+             } else {
+                 inputs[i].classList.remove('error');
+             }
+         }
+
+         if (!isValid) {
+             event.preventDefault();
+         } else {
+             // Eğer gerekli alanlar doldurulmuşsa
+             // Mesaj gönderme işlemleri burada yapılabilir.
+             window.alert('Mesajınız gönderildi! Mailiniz üzerinden iletişime geçilecektir.');
+         }
+     });
+</script>
+
+<style>
+    .error {
+        border-color: red;
+    }
+</style>
