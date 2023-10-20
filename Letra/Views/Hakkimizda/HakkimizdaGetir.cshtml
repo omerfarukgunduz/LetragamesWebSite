@@ -16,11 +16,11 @@
     <br />
     <b>Açıklama</b>
     <br />
-    @Html.TextBoxFor(a => a.Aciklama, new { @class = "form-control" })
+    @Html.TextBoxFor(a => a.Aciklama, new { @class = "form-control", required = "required" })
     <br />
     <b>Logo Link</b>
     <br />
-    @Html.TextBoxFor(a => a.LogoLink, new { @class = "form-control" })
+    @Html.TextBoxFor(a => a.LogoLink, new { @class = "form-control", required = "required" })
     <br />
 
     <button class="btn btn-info">Kaydet</button>
