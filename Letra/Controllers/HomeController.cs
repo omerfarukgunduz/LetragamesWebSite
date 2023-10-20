@@ -17,11 +17,42 @@ namespace Letra.Controllers
             return View();
         }
 
+        public PartialViewResult HakkimizdaPartial()
+        {
+            var veriler = c.Hakkimizda.ToList();
+            return PartialView(veriler);
+        }
+
+        public PartialViewResult OyunlarimizPartial()
+        {
+            var veriler = c.Oyunlarimiz.ToList();
+            return PartialView(veriler);
+        }
+
+        public PartialViewResult EkibimizPartial()
+        {
+            var veriler = c.Ekibimiz.ToList();
+            return PartialView(veriler);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         [HttpGet]
         public PartialViewResult Iletisim()
         {
             return PartialView();
         }
+
 
         [HttpPost]
         public PartialViewResult Iletisim(İletisim i)
@@ -30,6 +61,7 @@ namespace Letra.Controllers
             c.SaveChanges();
             return PartialView();
         }
+
 
     }
 }

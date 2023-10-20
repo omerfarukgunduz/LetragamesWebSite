@@ -1,0 +1,18 @@
+﻿@using Letra.Models
+@model List<Hakkimizda>
+
+<div class="roww">
+    <h1>HAKKIMIZDA</h1>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            @foreach (var x in Model)
+            { <div class="col-lg-4 order-lg-0">
+                <img src="@x.LogoLink" height="200">
+            </div>
+            <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
+                <p> @x.Aciklama</p>
+            </div>
+            }
+        </div>
+    </div>
+</div>

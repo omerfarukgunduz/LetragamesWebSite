@@ -5,102 +5,108 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 <h2>Oyunlarımız Sayfası</h2>
 
 <div class="container">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Oyun Adı</th>
-                <th scope="col">Oyun Açıklaması</th>
-                <th scope="col">Oyun Fotoğrafı Linki</th>
-                <th scope="col">Oyun Linki</th>
-                <th scope="col">Güncelle</th>
-                <th scope="col">Sil</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var x in Model)
-            {
-                <tr>
-                    <th scope="row">@x.Id</th>
-                    <td>@x.OyunAdi</td>
-                    <td>@x.OyunAciklamasi</td>
-                    <td>@x.OyunFotografi</td>
-                    <td>@x.OyunLinki</td>
-                    <td><a href="/Oyunlarimiz/OyunGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
-                    <td><a href="/Oyunlarimiz/OyunSil/@x.Id" class="btn btn-danger sil" data-id="@x.Id">Sil</a></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <th scope="row">ID</th>
+                        <td>@x.Id</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Oyun Adı</th>
+                        <td>@x.OyunAdi</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Oyun Açıklaması</th>
+                        <td>@x.OyunAciklamasi</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Oyun Fotoğrafı Linki</th>
+                        <td>@x.OyunFotografi</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Oyun Linki</th>
+                        <td>@x.OyunLinki</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Güncelle</th>
+                        <td><a href="/Oyunlarimiz/OyunGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
+                    </tr>
+                    
+                    <tr style="border-bottom: 4px solid #ff0000;">
+                        <th scope="row">Sil:</th>
+                        <td><a href="/Oyunlarimiz/OyunSil/@x.Id" class="btn btn-danger sil" data-id="@x.Id">Sil</a></td>
+                    </tr>
+                    }
+                </thead>
+        </table>
+    </div>
 </div>
-
-
-
 <a link href="/Oyunlarimiz/YeniOyunEkle/" class="btn btn-primary"> Yeni Oyun Ekle </a>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-        // Tüm "silButton" sınıfına sahip öğeleri seç
-        var deleteButtons = document.querySelectorAll(".sil");
+    // Tüm "silButton" sınıfına sahip öğeleri seç
+    var deleteButtons = document.querySelectorAll(".sil");
 
-        // Her bir buton için olay dinleyici ekle
-        deleteButtons.forEach(function (button) {
-            button.addEventListener("click", function (e) {
-                e.preventDefault();
-                var adminid = button.getAttribute("data-id");
+    // Her bir buton için olay dinleyici ekle
+    deleteButtons.forEach(function (button) {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            var adminid = button.getAttribute("data-id");
 
-                Swal.fire({
-                    title: 'Emin misiniz?',
-                    text: "Silmek istediğinizden emin misiniz?",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
-                    confirmButtonText: 'Evet, sil!',
-                    cancelButtonText: 'İptal'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        performDelete(adminid);
-                    }
-                });
-            });
-        });
-
-        function performDelete(adminid) {
-            $.ajax({
-                url: '/Oyunlarimiz/OyunSil', // Controller işleminin URL'sini doğru şekilde belirtin  buraaya dikkat
-                method: 'POST', // Veya GET, PUT, DELETE
-                data: { id: adminid }, // İsteğe gönderilecek veriler
-                success: function (data) {
-                    Swal.fire({
-                        icon: 'success', // İkon tipi
-                        title: 'Silindi!', // Başlık
-                        text: 'İşlem başarıyla tamamlandı.', // Metin içeriği
-                        showConfirmButton: false, // Onay butonunu gizle
-                        timer: 1500 // Otomatik kapatılma süresi (isteğe bağlı)
-                    });
-
-                    // Belirli bir süre sonra sayfanın yeniden yüklenmesini sağla
-                    setTimeout(function () {
-                        // Takvim controllerını tetiklemek için ayrı bir AJAX isteği gönder
-                        // Burada triggerCalendarAction() veya gerekli işlemi çağırabilirsiniz
-                        location.reload(); // Sayfayı yeniden yükle
-                    }, 1500);
-                },
-                error: function () {
-                    Swal.fire(
-                        'Hata!',
-                        'İşlem sırasında bir hata oluştu.',
-                        'error'
-                    );
+            Swal.fire({
+                title: 'Emin misiniz?',
+                text: "Silmek istediğinizden emin misiniz?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Evet, sil!',
+                cancelButtonText: 'İptal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    performDelete(adminid);
                 }
             });
-        }
+        });
+    });
+
+    function performDelete(adminid) {
+        $.ajax({
+            url: '/Oyunlarimiz/OyunSil', // Controller işleminin URL'sini doğru şekilde belirtin  buraaya dikkat
+            method: 'POST', // Veya GET, PUT, DELETE
+            data: { id: adminid }, // İsteğe gönderilecek veriler
+            success: function (data) {
+                Swal.fire({
+                    icon: 'success', // İkon tipi
+                    title: 'Silindi!', // Başlık
+                    text: 'İşlem başarıyla tamamlandı.', // Metin içeriği
+                    showConfirmButton: false, // Onay butonunu gizle
+                    timer: 1500 // Otomatik kapatılma süresi (isteğe bağlı)
+                });
+
+                // Belirli bir süre sonra sayfanın yeniden yüklenmesini sağla
+                setTimeout(function () {
+                    // Takvim controllerını tetiklemek için ayrı bir AJAX isteği gönder
+                    // Burada triggerCalendarAction() veya gerekli işlemi çağırabilirsiniz
+                    location.reload(); // Sayfayı yeniden yükle
+                }, 1500);
+            },
+            error: function () {
+                Swal.fire(
+                    'Hata!',
+                    'İşlem sırasında bir hata oluştu.',
+                    'error'
+                );
+            }
+        });
+    }
 </script>

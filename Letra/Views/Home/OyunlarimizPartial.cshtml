@@ -1,0 +1,21 @@
+﻿@using Letra.Models
+@model List<Oyunlarimiz>
+<h1>OYUNLARIMIZ</h1>
+
+<div class="gridd">
+    @foreach (var x in Model)
+    {
+        <div class="gridd-item">
+            <div class="card">
+                <img class="card-img"
+                     src="@x.OyunFotografi"
+                     alt="oyunresmi" />
+                <div class="card-content">
+                    <h1 class="card-header">@x.OyunAdi</h1>
+                    <p class="card-text">@x.OyunAciklamasi</p>
+                    <a href="@x.OyunLinki" class="card-button">ŞİMDİ OYNA<span>&rarr;</span></a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
