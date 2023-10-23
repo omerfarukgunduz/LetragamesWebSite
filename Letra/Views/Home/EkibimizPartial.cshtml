@@ -5,10 +5,10 @@
     <h1>EKİBİMİZ</h1>
 </div>
 <div class="roww">
-    <div class="column">
-        <div class="cardd-container">
-            @foreach (var x in Model)
-            {
+    @foreach (var x in Model)
+    {
+        <div class="column">
+            <div class="cardd-container"  style=" margin-top: 20px;">
                 <div class="cardd">
                     <div class="img-container">
                         <img src="@x.UyeFotograf" />
@@ -27,7 +27,7 @@
                         </a>
                     </div>
                 </div>
-            }
+            </div>
         </div>
-    </div>
-</div>
+    }
+</div>  
